@@ -7,6 +7,15 @@ public class MProduct {
     private int id,color;
     private String size,discountParcentage;
     private int price,discountPrice;
+    private int click;
+
+    public int getClick() {
+        return click;
+    }
+
+    public void setClick(int click) {
+        this.click = click;
+    }
 
     public int getPrice() {
         return price;

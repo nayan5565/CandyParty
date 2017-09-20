@@ -1,6 +1,7 @@
 package com.nayan.candyparty;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,11 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         mProduct = productArrayList.get(position);
         holder.txtSize.setText(mProduct.getSize());
+        if (mProduct.getClick() == 1) {
+            holder.txtSize.setBackgroundColor(Color.RED);
+        }else {
+            holder.txtSize.setBackgroundColor(Color.WHITE);
+        }
 
 
     }
@@ -64,10 +70,16 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
                 @Override
                 public void onClick(View v) {
                     mProduct = productArrayList.get(getAdapterPosition());
+                    for (int i = 0; i < productArrayList.size(); i++) {
+                        productArrayList.get(i).setClick(0);
+                    }
+                    productArrayList.get(getAdapterPosition()).setClick(1);
+
+                    mProduct = productArrayList.get(getAdapterPosition());
                     MainActivity.getInstance().txtPrice.setText(mProduct.getPrice() + "");
                     MainActivity.getInstance().txtDP.setText(mProduct.getDiscountPrice() + "");
                     MainActivity.getInstance().txtDPercn.setText(mProduct.getDiscountParcentage());
-
+                    notifyDataSetChanged();
                 }
             });
 
