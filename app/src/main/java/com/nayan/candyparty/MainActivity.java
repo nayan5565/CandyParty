@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         recColor.setLayoutManager(layoutManager2);
         recColor.setAdapter(colorAdapter);
         recSize.setAdapter(sizeAdapter);
+        productArrayList.get(0).setClick(1);
         colorAdapter.setData(productArrayList);
         sizeAdapter.setData(productArrayList);
     }

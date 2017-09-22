@@ -6,10 +6,18 @@
 
     <ImageView
 
-        android:layout_marginLeft="20dp"
         android:id="@+id/imgColor"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#f0f" />
+
+    <TextView
+        android:layout_marginTop="05dp"
+        android:id="@+id/txtColor"
+        android:layout_width="50dp"
+        android:layout_height="05dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 </LinearLayout>
