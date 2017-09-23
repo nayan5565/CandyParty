@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         mProduct.setDiscountPrice(360);
         productArrayList.add(mProduct);
         mProduct = new MProduct();
-        mProduct.setColor(Color.YELLOW);
+        mProduct.setColor(Color.GREEN);
         mProduct.setSize("x3");
         mProduct.setDiscountParcentage("10%");
         mProduct.setPrice(200);
