@@ -49,7 +49,7 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
         GradientDrawable drawable = (GradientDrawable) holder.txtSize.getBackground();
         if (mProduct.getClick() == 1) {
             drawable.setColor(Color.RED);
-        }else {
+        } else {
             drawable.setColor(Color.GRAY);
         }
 
@@ -78,6 +78,7 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
                     productArrayList.get(getAdapterPosition()).setClick(1);
 
                     mProduct = productArrayList.get(getAdapterPosition());
+                    FragDetail.newInstance().txtDeatils.setText(mProduct.getDetail());
                     MainActivity.getInstance().txtPrice.setText(mProduct.getPrice() + "");
                     MainActivity.getInstance().txtDP.setText(mProduct.getDiscountPrice() + "");
                     MainActivity.getInstance().txtDPercn.setText(mProduct.getDiscountParcentage());

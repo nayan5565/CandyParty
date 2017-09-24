@@ -1,0 +1,26 @@
+package com.nayan.candyparty;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+/**
+ * Created by Nayan on 9/25/2017.
+ */
+public class FragShiftment extends Fragment {
+    TextView txtShiftmanr;
+    @Nullable
+    public static FragShiftment newInstance() {
+        return new FragShiftment();
+    }
+
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frag_shiftment, container, false);
+        txtShiftmanr=(TextView)getActivity().findViewById(R.id.txtShiftment);
+        return view;
+    }
+}

@@ -8,6 +8,31 @@ public class MProduct {
     private String size,discountParcentage;
     private int price,discountPrice;
     private int click;
+    private String detail,shiftment,review;
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getShiftment() {
+        return shiftment;
+    }
+
+    public void setShiftment(String shiftment) {
+        this.shiftment = shiftment;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
 
     public int getClick() {
         return click;
