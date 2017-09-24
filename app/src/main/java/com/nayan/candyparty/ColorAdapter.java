@@ -1,6 +1,7 @@
 package com.nayan.candyparty;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,7 +47,8 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         mProduct = productArrayList.get(position);
-        holder.btnColor.setColor(mProduct.getColor());
+        GradientDrawable drawable = (GradientDrawable) holder.btnColor.getBackground();
+        drawable.setColor(mProduct.getColor());
         if (mProduct.getClick() == 1) {
             holder.imgTick.setVisibility(View.VISIBLE);
         } else {
@@ -62,16 +64,16 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.MyViewHolder
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        CircleButton btnColor;
+        ImageView btnColor;
         ImageView imgTick;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             Log.e("pos", " is click");
-            btnColor = (CircleButton) itemView.findViewById(R.id.btnColor);
+            btnColor = (ImageView) itemView.findViewById(R.id.btnColor);
             imgTick = (ImageView) itemView.findViewById(R.id.imgTick);
-            btnColor.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.e("pos", " is click item");

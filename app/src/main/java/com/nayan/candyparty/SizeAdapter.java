@@ -2,6 +2,7 @@ package com.nayan.candyparty;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,10 +46,11 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         mProduct = productArrayList.get(position);
         holder.txtSize.setText(mProduct.getSize());
+        GradientDrawable drawable = (GradientDrawable) holder.txtSize.getBackground();
         if (mProduct.getClick() == 1) {
-            holder.txtSize.setBackgroundColor(Color.RED);
+            drawable.setColor(Color.RED);
         }else {
-            holder.txtSize.setBackgroundColor(Color.WHITE);
+            drawable.setColor(Color.GRAY);
         }
 
 
